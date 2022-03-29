@@ -1,30 +1,44 @@
-
 function setup() {
-	createCanvas(800, 600);
+	createCanvas(1400,750);
 }
-
 function draw() {
 	background(0);
-stroke(0);
-strokeWeight(4);
-rect( 270, 250, 150);
-if (mouseX < 400) {
-	fill(255, 0, 200);
-rect (420, 290, 10, 150);
-rect (260, 290, 10, 150);
-rect (300, 400, 20, 120);
-rect (370, 400, 20, 120);
-ellipse(345, 195, 120, 120);
-rect(365, 195, 15, 1)
-rect(315, 195, 15, 1)
+
+
+animateDM(mouseX, mouseY);
+
 }
 
+function animateDM(x, y) {
+	push();
+	translate(x, y);
 
 
+	if ((frameCount / 15) % 2 < 1) {
+    drawDM1();
+	}
+   else {
+		drawDM2();
+	}
+	pop();
+}
 
+function drawDM1() {
+  fill(255, 0, 200);
+rect( 270, 250, 150);
+  rect (420, 290, 10, 150);
+  rect (260, 290, 10, 150);
+  rect (300, 400, 20, 120);
+  rect (370, 400, 20, 120);
+  ellipse(345, 195, 120, 120);
+  rect(365, 195, 15, 1)
+  rect(315, 195, 15, 1)
+  }
 
-if (mouseX > 400) {
-	fill(255, 50, 0);
+function drawDM2() {
+  fill(255, 50, 0);
+
+  rect( 270, 250, 150);
 rect (420, 290, 150, 10);
 rect (260, 290, 150, 10);
 rect (300, 400, 20, 120);
